@@ -41,6 +41,6 @@ jobs:
            -Dsonar.coverage.jacoco.xmlReportPaths=build/reports/jacoco/test/jacocoTestReport.xml
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: ./gradlew build sonar --info
+        run: ./gradlew build sonar --info 
       - name: Verificar reporte Jacoco
         run: ls -la build/reports/jacoco/test

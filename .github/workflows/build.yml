@@ -37,4 +37,10 @@ jobs:
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: ./gradlew build sonar --info
+        run: |
+         ./gradlew test jacocoTestReport sonarqube \
+           -Dsonar.login=$SONAR_TOKEN \
+           -Dsonar.organization=arboleda5252 \
+           -Dsonar.projectKey=tArboleda5252_Backend_FleetGuard360\
+           -Dsonar.coverage.jacoco.xmlReportPaths=build/reports/jacoco/test/jacocoTestReport.xml \
+         --info

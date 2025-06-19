@@ -59,7 +59,7 @@ sonar {
     property "sonar.projectKey", "Arboleda5252_Backend_FleetGuard360"
     property "sonar.organization", "arboleda5252"
     property "sonar.host.url", "https://sonarcloud.io"
-	property "sonar.coverage.jacoco.xmlReportPaths", "build/reports/jacoco/test/jacocoTestReport.xml"
+    property "sonar.coverage.jacoco.xmlReportPaths", "$buildDir/reports/jacoco/test/jacocoTestReport.xml"
   }
 }
 
@@ -76,7 +76,7 @@ jacocoTestReport {
     dependsOn test // los tests se ejecuten primero
     reports {
         xml.required = true  
-		csv.required = false
-		html.outputLocation = layout.buildDirectory.dir("jacoco")
+	csv.required = false
+	html.outputLocation = layout.buildDirectory.dir("jacoco")
     }
 }

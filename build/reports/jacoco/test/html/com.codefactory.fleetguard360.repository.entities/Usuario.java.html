@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Usuario.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">fleetguard360</a> &gt; <a href="index.source.html" class="el_package">com.codefactory.fleetguard360.repository.entities</a> &gt; <span class="el_source">Usuario.java</span></div><h1>Usuario.java</h1><pre class="source lang-java linenums">package com.codefactory.fleetguard360.repository.entities;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+<span class="fc" id="L9">public class Usuario {</span>
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    private String email;
+    private String passwordHash;
+    private String rol;
+    private String bloqueoHasta;
+    private int intentosFallidos;
+
+    public int getId() {
+<span class="nc" id="L21">        return id;</span>
+    }
+
+    public void setId(int id) {
+<span class="nc" id="L25">        this.id = id;</span>
+<span class="nc" id="L26">    }</span>
+
+    public String getEmail() {
+<span class="nc" id="L29">        return email;</span>
+    }
+
+    public void setEmail(String email) {
+<span class="nc" id="L33">        this.email = email;</span>
+<span class="nc" id="L34">    }</span>
+
+    public String getPasswordHash() {
+<span class="nc" id="L37">        return passwordHash;</span>
+    }
+
+    public void setPasswordHash(String passwordHash) {
+<span class="nc" id="L41">        this.passwordHash = passwordHash;</span>
+<span class="nc" id="L42">    }</span>
+
+    public String getRol() {
+<span class="nc" id="L45">        return rol;</span>
+    }
+
+    public void setRol(String rol) {
+<span class="nc" id="L49">        this.rol = rol;</span>
+<span class="nc" id="L50">    }</span>
+
+    public String getBloqueoHasta() {
+<span class="nc" id="L53">        return bloqueoHasta;</span>
+    }
+
+    public void setBloqueoHasta(String bloqueoHasta) {
+<span class="nc" id="L57">        this.bloqueoHasta = bloqueoHasta;</span>
+<span class="nc" id="L58">    }</span>
+
+    public int getIntentosFallidos() {
+<span class="nc" id="L61">        return intentosFallidos;</span>
+    }
+
+    public void setIntentosFallidos(int intentosFallidos) {
+<span class="nc" id="L65">        this.intentosFallidos = intentosFallidos;</span>
+<span class="nc" id="L66">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

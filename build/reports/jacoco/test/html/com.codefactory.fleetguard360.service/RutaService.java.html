@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RutaService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">fleetguard360</a> &gt; <a href="index.source.html" class="el_package">com.codefactory.fleetguard360.service</a> &gt; <span class="el_source">RutaService.java</span></div><h1>RutaService.java</h1><pre class="source lang-java linenums">package com.codefactory.fleetguard360.service;
+
+import com.codefactory.fleetguard360.controller.DTO.RutaDTO;
+import com.codefactory.fleetguard360.repository.RutaRepository;
+import com.codefactory.fleetguard360.repository.entities.Ruta;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+<span class="fc" id="L12">public class RutaService {</span>
+
+    @Autowired
+    private RutaRepository rutaRepository;
+
+    public Ruta crearRuta(RutaDTO dto) {
+<span class="nc" id="L18">        Ruta ruta = new Ruta();</span>
+<span class="nc" id="L19">        ruta.setNombre(dto.nombre);</span>
+<span class="nc" id="L20">        ruta.setOrigen(dto.origen);</span>
+<span class="nc" id="L21">        ruta.setDestino(dto.destino);</span>
+<span class="nc" id="L22">        return rutaRepository.save(ruta);</span>
+    }
+
+    public Ruta actualizarRuta(int id, RutaDTO dto) {
+<span class="nc" id="L26">        Ruta ruta = rutaRepository.findById(id)</span>
+<span class="nc" id="L27">                .orElseThrow(() -&gt; new RuntimeException(&quot;Ruta no encontrada&quot;));</span>
+
+<span class="nc" id="L29">        ruta.setNombre(dto.nombre);</span>
+<span class="nc" id="L30">        ruta.setOrigen(dto.origen);</span>
+<span class="nc" id="L31">        ruta.setDestino(dto.destino);</span>
+<span class="nc" id="L32">        return rutaRepository.save(ruta);</span>
+    }
+
+    public void eliminarRuta(int id) {
+<span class="nc" id="L36">        rutaRepository.deleteById(id);</span>
+<span class="nc" id="L37">    }</span>
+
+    public List&lt;Ruta&gt; listarRutas() {
+<span class="nc" id="L40">        return rutaRepository.findAll();</span>
+    }
+
+    public Ruta obtenerRutaPorId(int id) {
+<span class="nc" id="L44">        return rutaRepository.findById(id)</span>
+<span class="nc" id="L45">                .orElseThrow(() -&gt; new RuntimeException(&quot;Ruta no encontrada&quot;));</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

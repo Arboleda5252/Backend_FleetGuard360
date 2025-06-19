@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AuthGraphQLController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">fleetguard360</a> &gt; <a href="index.source.html" class="el_package">com.codefactory.fleetguard360.controller.graphql</a> &gt; <span class="el_source">AuthGraphQLController.java</span></div><h1>AuthGraphQLController.java</h1><pre class="source lang-java linenums">package com.codefactory.fleetguard360.controller.graphql;
+
+import com.codefactory.fleetguard360.controller.graphql.payload.AuthPayload;
+import com.codefactory.fleetguard360.service.AuthService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.graphql.data.method.annotation.Argument;
+import org.springframework.graphql.data.method.annotation.MutationMapping;
+import org.springframework.stereotype.Controller;
+
+@Controller
+<span class="fc" id="L11">public class AuthGraphQLController {</span>
+
+    @Autowired
+    private AuthService authService;
+
+    @MutationMapping
+    public AuthPayload login(@Argument String correo, @Argument String password) {
+<span class="nc" id="L18">        String token = authService.login(correo, password);</span>
+<span class="nc" id="L19">        return new AuthPayload(token);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

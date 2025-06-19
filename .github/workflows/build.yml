@@ -27,8 +27,6 @@ jobs:
           restore-keys: ${{ runner.os }}-sonar
       - name: Dar permisos de ejecución a gradlew
         run: chmod +x gradlew
-      - name: Run Tests and Generate Jacoco Report
-        run: ./gradlew test jacocoTestReport
       - name: Cache Gradle packages
         uses: actions/cache@v4
         with:

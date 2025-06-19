@@ -36,7 +36,6 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
           restore-keys: ${{ runner.os }}-gradle
       - name: Build and analyze
-        uses: SonarSource/sonarcloud-github-action@v2
         with: 
           args: >
             -Dsonar.projectKey=Arboleda5252_Backend_FleetGuard360
